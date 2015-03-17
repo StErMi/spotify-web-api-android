@@ -5,6 +5,8 @@
 This project is a wrapper for the [Spotify Web API](https://developer.spotify.com/web-api/).
 It uses [Retrofit](http://square.github.io/retrofit/) to create Java interfaces from API endpoints.
 
+NOTE: I've forked this project because I need to use it as an Android Library. This will allow me to implements Parcelable Interface in all the models Class. With everything Parcelable we can transfer those models between Android's Activities and Services.
+
 ## Building
 This project is built using [Gradle](https://gradle.org/):
 
@@ -28,6 +30,15 @@ It is also possible to build the project as a fat jar that contains all dependen
 `./gradlew jarAll`
 
 the jar will be located in `build/libs/spotify-web-api-android-all-0.1.0.jar`
+
+#### Proguard/Dexguard
+
+If you are using Proguard or Dexguard in your project please add this lines to your configuration file. 
+
+```
+-keepattributes *Annotation*
+-keepattributes Signature
+```
 
 
 ## Usage

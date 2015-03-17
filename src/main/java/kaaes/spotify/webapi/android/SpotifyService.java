@@ -20,6 +20,7 @@ import kaaes.spotify.webapi.android.models.PlaylistTrack;
 import kaaes.spotify.webapi.android.models.PlaylistsPager;
 import kaaes.spotify.webapi.android.models.Result;
 import kaaes.spotify.webapi.android.models.SavedTrack;
+import kaaes.spotify.webapi.android.models.SavedTrackPager;
 import kaaes.spotify.webapi.android.models.SnapshotId;
 import kaaes.spotify.webapi.android.models.Track;
 import kaaes.spotify.webapi.android.models.Tracks;
@@ -950,7 +951,7 @@ public interface SpotifyService {
      * @see <a href="https://developer.spotify.com/web-api/get-users-saved-tracks/">Get a User’s Saved Tracks</a>
      */
     @GET("/me/tracks")
-    public void getMySavedTracks(Callback<Pager<SavedTrack>> callback);
+    public void getMySavedTracks(Callback<SavedTrackPager> callback);
 
     /**
      * Get a list of the songs saved in the current Spotify user’s “Your Music” library.
@@ -958,7 +959,7 @@ public interface SpotifyService {
      * @see <a href="https://developer.spotify.com/web-api/get-users-saved-tracks/">Get a User’s Saved Tracks</a>
      */
     @GET("/me/tracks")
-    public Pager<SavedTrack> getMySavedTracks();
+    public SavedTrackPager getMySavedTracks();
 
     /**
      * Get a list of the songs saved in the current Spotify user’s “Your Music” library.
@@ -968,7 +969,7 @@ public interface SpotifyService {
      * @see <a href="https://developer.spotify.com/web-api/get-users-saved-tracks/">Get a User’s Saved Tracks</a>
      */
     @GET("/me/tracks")
-    public void getMySavedTracks(@QueryMap Map<String, Object> options, Callback<Pager<SavedTrack>> callback);
+    public void getMySavedTracks(@QueryMap Map<String, Object> options, Callback<SavedTrackPager> callback);
 
     /**
      * Get a list of the songs saved in the current Spotify user’s “Your Music” library.
@@ -978,7 +979,7 @@ public interface SpotifyService {
      * @see <a href="https://developer.spotify.com/web-api/get-users-saved-tracks/">Get a User’s Saved Tracks</a>
      */
     @GET("/me/tracks")
-    public Pager<SavedTrack> getMySavedTracks(@QueryMap Map<String, Object> options);
+    public SavedTrackPager getMySavedTracks(@QueryMap Map<String, Object> options);
 
     /**
      * Check if one or more tracks is already saved in the current Spotify user’s “Your Music” library.
